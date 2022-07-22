@@ -1,0 +1,77 @@
+<!-- 使用网络请求jquery -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>网络请求jquery</title>
+    <style>
+         .box_1 {
+                /* 背景色 */
+                background-color: #ff2;
+                /* 边框圆角 */
+                border-radius: 6px;
+                margin-top: 10px;
+                padding: 20px;
+                width: 80%;
+                margin-bottom: 20px;
+            }
+    </style>
+    <script>
+        // 我是按钮点击的事件
+        function btnAction(){
+            document.getElementById("click").innerHTML="我是一个新的demo!";
+            console.log("哈哈我来了！");
+       }
+   </script>
+   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+       
+    <script>
+        // 发送一个请求
+        function btnAction2(){
+            $.ajax({
+                type:"get",
+                url:"http://www.baidu.com",
+                async:true,
+                success:function(data){
+                    document.getElementById("data").innerHTML="请求:"+data;
+                },
+                error:function(data){
+                    console.log("error:",data);
+                }
+            })
+            // $("p").hide() 
+    
+       }
+   </script>
+
+    <script>
+         function btnAction3(){
+            $("#div1").fadeIn();
+            $("#div2").fadeIn("slow");
+            $("#div3").fadeIn(3000);
+         }
+    </script>
+</head>
+<body>
+
+    <!--  点击的事件 -->
+    <h1>测试按钮点击事件</h1>
+    <p id="click">我是demo</p>
+    <button type="button" onclick="btnAction()">点击按钮</button>  
+
+     <!--  发送一个请求 -->
+     <h1>测试数据请求</h1>
+     <p id="data">我是data</p>
+     <button type="button" onclick="btnAction2()">请求按钮</button>  
+     
+     <!--  动画效果 -->
+     <h1>以下实例演示了 fadeIn() 使用了不同参数的效果。</h1>
+    <button type="button" onclick="btnAction3()">点击淡入 div 元素。</button>
+    <br><br>
+     <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+     <div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+     <div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+     
+</body>
+</html>
+ 

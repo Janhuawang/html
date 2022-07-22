@@ -1,0 +1,93 @@
+<!-- 
+    position 定位属性
+    4种模式：
+    Fixed固定、raletive相对自己、absolute绝对，参考最近已经定位的父布局，若没有会依赖浏览器、Sticky 吸顶
+    默认模式：static 即没有定位，遵循正常的文档流对象。
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* 通配符，所有div默认设置 */
+        *{
+           margin: 0; 
+           padding: 0;
+        }
+        /* 相对浏览器 固定的 */
+        div.back{
+            padding: 40px;
+            background-color: antiquewhite;
+            position: fixed;
+            right: 10px;
+            bottom: 20px;
+            
+        }
+        /* 相对于自己的 top这个属性值不会占用空间，会导致下方div不会紧贴*/
+        div.dialog{ 
+            position: relative;
+            background-color: aliceblue;
+            display: inline-block;
+            padding: 40px;
+            margin-left: 40px;
+            margin-top: 40px;
+            top: 40px;
+        }
+        /* text-align 文本剧中对齐 */
+        div.close{
+            position: absolute;
+            bottom: -30px;
+             left: 0px;
+             right: 0px;
+            text-align: center;  
+        }
+        /* 列表 */
+        div.sticky{
+           position: absolute;
+           left: 0px;
+           height: 1000px;
+           top: 140px;
+           background-color: bisque;
+
+        }
+        /* 距离顶部0时吸顶 */
+        div.title{
+            border: 2px solid red;
+            background-color: white;
+            position: sticky;
+            top: 0px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="dialog">  
+        我是一个弹窗 
+        <div class="close">返回</div>
+
+        <div class="sticky">
+            <p>Item1</p>
+            <p>Item2</p>
+            <p>Item3</p>
+            <div class="title">我是标题</div>
+            <p>Item4</p>
+            <p>Item5</p>
+            <p>Item6</p>
+            <p>Item7</p>
+            <p>Item8</p>
+            <p>Item9</p>
+        </div>
+    </div>
+
+    
+
+    <div class="back">返回按钮</div>
+    
+</body>
+</html>

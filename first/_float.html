@@ -1,0 +1,85 @@
+<!-- Float 浮动属性 漂浮属性,也可以将垂直列表改为水平方向的列表 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>浮动属性</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        div.div1{
+            background-color: antiquewhite;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: right;
+        }
+        div.div2{
+            background-color: yellow;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            clear: both;
+
+        }
+        div.div3{
+            background-color: yellowgreen;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            float: right;
+        }
+        div.div4{
+            background-color: blue;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            clear: both;
+        }
+        ul.nav{
+            list-style: none;
+            display: inline-block;
+            margin:  0;
+            padding: 0;
+            background-color: aqua;   
+            border:1px solid red;
+             
+        }
+        li.item{
+           float: left;
+           height: 50px; 
+           width: 100px;
+           line-height: 50px;
+           text-align: center;
+           border-right: 1px solid red;
+        }
+        li.last{
+            border-right: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+     <div class="div1">div1</div>
+     <div class="div2">div2</div>
+     <div class="div3">div3</div>
+     <div class="div4">div4</div>
+
+     <p>下面是个ul列表</p>
+     
+     <ul class="nav"> 
+         <li class="item">html</li>
+         <li class="item">css</li>
+         <li class="item">js</li>
+         <li class="item last">vue</li>
+     </ul>
+</body>
+</html>

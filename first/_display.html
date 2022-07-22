@@ -1,0 +1,62 @@
+<!-- display属性 
+    1、none 空 完全隐藏 
+    2、block 块 前后会增加换行，宽度会撑满，高度随自身适应 
+    3、inline 内联 前后不会增加换行，宽高会随自身适应，设置大小不会生效。
+    4、inline-block 内联块 前后不会增加换行，可以设置宽高大小。
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>我是页面标题-display 属性</title>
+
+        <style>
+             
+            .box_4 {
+                border-style: dotted;
+                border-radius: 6px;
+                border-color: #fe9;
+                background-color: beige;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 20px;
+                width: 20%;
+                height: 100px;
+                /* none:空元素 不展示 、inline:内联元素 根据标签自身适应大小,设置width height 不会生效、 block:块元素 标签默认为最大宽度、inline-block: 行内块元素，可以设置宽高 不会自动换行*/
+                display:inline-block 
+            }
+            h1 {
+                display: inline;
+            }
+            p {
+                display: inline;
+            }
+            a {
+                display: inline-block;
+            }
+            span {
+                display: block;
+            }
+            #span {
+                display: block;
+                height: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- div、h、p默认为块元素，块元素会前后自动换行 block-->
+        <div class="box_4">我是第4个盒子</div>
+        <span id="span"></span> 
+        <h1>我是h标签</h1>
+        <span id="span"></span> 
+        <p>我是p标签</p>
+        <span id="span"></span> 
+        <!-- a、span标签默认为内联元素 不回自动换行 inline-->
+        <a href="https://www.baidu.com">超链接1</a>
+            <a href="https://www.baidu.com">超链接2</a>
+                <a href="https://www.baidu.com">超链接3</a>
+                    <span>我是span 标签</span>
+    </body>
+
+</html>
