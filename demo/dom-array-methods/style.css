@@ -1,0 +1,44 @@
+/* 增加按钮样式 id可以不用. ,class需要用. */
+button{
+    cursor: pointer;
+    /* 背景色 */
+    background-color: aliceblue;
+    /* 边框增加线条 */
+    border: solid 1px #111;
+    /* 圆角 */
+    border-radius: 5px;
+    /* 单行、单块展示 */
+    display: block; 
+    /* 宽度按照屏幕的百分百展示 */
+    width: 100%;
+    /* 增加了一个那边距 */
+    padding: 10px;
+    /* 底部增加一个边距 */
+    margin-bottom: 10px;
+    /* 字号加粗 */
+    font-weight: bold;
+    /* 字号大小 */
+    font-size: 14px;
+
+}
+
+/* 列表父布局样式 */
+main {
+    flex: 1;
+}
+
+/* 列表item样式 */
+h2 {
+    background-color: rgb(233, 18, 18);
+    border-bottom: 1px solid #111;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: flex;
+    font-weight: 300;
+    margin: 0 0 10px 0;
+}
+strong {
+    color: blue;
+    font-size: 16px;
+    font-weight: bold   ;
+}
