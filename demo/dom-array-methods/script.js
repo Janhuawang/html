@@ -52,7 +52,7 @@ function onDouble(){
     console.log("点击事件:","onDouble");
     // data = data.reduce((total,currentV,currentIndex)=>{
     //     total[currentIndex].number = currentV.number * 2;
-    //     return total;
+    //     // return total;
     // },data);
 
     // 如果没有初始化值时  
@@ -72,15 +72,46 @@ function onDouble(){
     updateDom();
 }
 
+// 获取最大的数
 function onMax(){
     console.log("点击事件:","onMax");
+    o = data.reduce((first,currentV)=>{
+        if(first.number > currentV.number){
+            return first;
+        }else{
+            return currentV;
+        }
+    });
+    
+    data.splice(0);
+    data.push(o);
+    console.log(`对象为 ${o.number}`);
+
+    updateDom();
 }
 
+// 从小到大排序
 function onSort(){
     console.log("点击事件:","onSort");
+
+    data = data.sort((f,t)=>{
+       return f.number - t.number;
+    });
+
+    updateDom();
 }
+
+/// 获取总数
 function onTotal(){
-    console.log("点击事件:","onTotal");
+    total = data.reduce((f,c)=>{
+        console.log(`f.number: ${f.number}`,`c.number: ${c.number}`);
+        return {number:f.number+c.number,name:"小刚刚"};
+    });
+    
+    data.splice(0);
+    data.push(total);
+    // main.innerHTML = `<h2><strong>${total.number}</strong></h2>`;
+    updateDom();
 }
 
 // 给标签对象添加点击事件
